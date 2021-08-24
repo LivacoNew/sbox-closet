@@ -1,0 +1,112 @@
+@import "/styles/base.scss";
+
+$accent-1: rgb(35, 115, 168);
+$accent-2: rgb(43, 102, 141);
+$accent-3: rgba(4, 28, 34, 0.918);
+
+.side_panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+
+    pointer-events: all;
+
+    backdrop-filter: blur(6px);
+    border-right: 5px solid $accent-1;
+
+    flex-grow: 0;
+	flex-shrink: 0;
+    flex-direction: column;
+}
+
+.selection_panel {
+    display: block;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+
+
+.button_panel {
+    display: block;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    height: 80px;
+}
+
+.button {
+    margin: 5px;
+    display: block;
+    max-height: 50px;
+    width: 100%;
+
+    background: linear-gradient($accent-1, $accent-2);
+    border-radius: 100%;
+    cursor: pointer;
+
+    label {
+        color: white;
+        font-size: 26px;
+        font-weight: bold;
+        // background-color: black;
+        
+        // this label litreally refuses to center unless i do this fucking autism and i have no idea why
+        left: 50%;
+        transform: translateX(-50%);
+        top: 25%;
+    }
+
+    &:hover {
+        background: linear-gradient($accent-2, $accent-1);
+    }
+}
+.selectionButton {
+    // wtf sbox
+    background: black;
+    min-height: 45px;
+
+    label {
+        font-size: 21px;
+    }
+}
+
+// dont even ask me how im laying this out cus i have no idea
+// i gave up with these flexboxes a long time ago
+.scroll {
+    overflow: scroll;
+    background-color: $accent-3;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+
+    flex-direction: column;
+    flex: 1 1 0%;
+    height: 300px;
+    // width: 40%;
+}
+.selectionTitle {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    // background-color: aqua;
+}
+.selectionRow {
+    // flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 1 0%;
+    flex-direction: row;
+    // flex: 0 0 50%;
+}
+.selection_panel {
+    flex-direction: column;
+    width: 100%;
+}
